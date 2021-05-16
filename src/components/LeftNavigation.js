@@ -3,6 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import * as Material from "@material-ui/core";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
+import { withRouter } from "react-router-dom";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 import {
   Payment,
   Dashboard,
@@ -13,41 +16,90 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    color: "gray",
-    fontSize: "2em",
+    width: "180px",
   },
+  dividerStyle: {
+    marginTop: "48px",
+  },
+  leftNavFooter: {
+    position: "fixed",
+    bottom: 0,
+    textAlign: "center",
+    paddingBottom: 40,
+    paddingLeft: 40,
+  },
+  outlined: {},
 });
-
-const pages = ["Overview", "Users", "Billing Info", "Sign Off"];
 
 const LeftNavigation = (props) => {
   const classes = useStyles();
+  //const history = useHistory();
+  //using array destructure
+  const { history } = props;
+  console.log("Props: ", props);
+  /*
+   * Contains each navigation item and its details
+   */
+  const pages = [
+    {
+      title: "Overview",
+      icon: <Dashboard />,
+      url: "/",
+      onClick: () => {
+        history.push("/");
+      },
+    },
+    {
+      title: "Users",
+      icon: <Group />,
+      url: "/users",
+      onClick: () => {
+        history.push("/users");
+      },
+    },
+    {
+      title: "Billing Info",
+      icon: <Payment />,
+      url: "/billingInfo",
+      onClick: () => {
+        history.push("/billinginfo");
+      },
+    },
+    {
+      title: "Sign Off",
+      icon: <EmojiPeople />,
+      url: "/signoff",
+      onClick: () => {
+        history.push("/signoff");
+      },
+    },
+  ];
 
   return (
     <div>
-      <Material.Divider></Material.Divider>
       <Drawer anchor="left" className={classes.root} variant="permanent">
+        <Material.Divider className={classes.dividerStyle} />
         <Material.List>
-          {pages.map((pageName, index) => (
-            <Material.ListItem button key={pageName}>
-              <ListItemIcon>
-                {(() => {
-                  switch (pageName) {
-                    case "Overview": return <Dashboard/>;
-                    case "Users": return <Group/>;
-                    case "Billing Info": return <Payment/>;
-                    case "Sign Off": return <EmojiPeople/>;
-                    default: return;
-                  }
-                })()}    
-              </ListItemIcon>
-              <Material.ListItemText primary={pageName} />
+          {pages.map((page, index) => (
+            <Material.ListItem button key={page.title} onClick={page.onClick}>
+              <ListItemIcon>{page.icon}</ListItemIcon>
+              <Material.ListItemText primary={page.title} />
             </Material.ListItem>
-              ))}
+          ))}
         </Material.List>
+        <div className={classes.leftNavFooter}>
+          <Button
+            variant="outlined"
+            color="inherit"
+            className={classes.outlined}
+          >
+            Sign off
+          </Button>
+        </div>
       </Drawer>
     </div>
   );
 };
 
-export default LeftNavigation;
+//withRouter() enables this component to be passed in a history object in its Props.
+export default withRouter(LeftNavigation);
