@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/my-att-app/static/css/main.6cc91080.chunk.css",
+    "main.js": "/my-att-app/static/js/main.7a71d7b3.chunk.js",
+    "main.js.map": "/my-att-app/static/js/main.7a71d7b3.chunk.js.map",
+    "runtime-main.js": "/my-att-app/static/js/runtime-main.97718b95.js",
+    "runtime-main.js.map": "/my-att-app/static/js/runtime-main.97718b95.js.map",
+    "static/js/2.a1a3202d.chunk.js": "/my-att-app/static/js/2.a1a3202d.chunk.js",
+    "static/js/2.a1a3202d.chunk.js.map": "/my-att-app/static/js/2.a1a3202d.chunk.js.map",
+    "static/js/3.b7930bc1.chunk.js": "/my-att-app/static/js/3.b7930bc1.chunk.js",
+    "static/js/3.b7930bc1.chunk.js.map": "/my-att-app/static/js/3.b7930bc1.chunk.js.map",
+    "index.html": "/my-att-app/index.html",
+    "static/css/main.6cc91080.chunk.css.map": "/my-att-app/static/css/main.6cc91080.chunk.css.map",
+    "static/js/2.a1a3202d.chunk.js.LICENSE.txt": "/my-att-app/static/js/2.a1a3202d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.97718b95.js",
+    "static/js/2.a1a3202d.chunk.js",
+    "static/css/main.6cc91080.chunk.css",
+    "static/js/main.7a71d7b3.chunk.js"
+  ]
+}
