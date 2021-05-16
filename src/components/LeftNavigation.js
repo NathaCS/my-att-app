@@ -1,18 +1,11 @@
-import { Drawer, ListItemText } from "@material-ui/core";
+import { Drawer } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import * as Material from "@material-ui/core";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import { withRouter } from "react-router-dom";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import {
-  Payment,
-  Dashboard,
-  Group,
-  EmojiPeople,
-  GroupAdd,
-} from "@material-ui/icons";
+import { Payment, Dashboard, Group, EmojiPeople } from "@material-ui/icons";
 
 const useStyles = makeStyles({
   root: {
@@ -36,7 +29,7 @@ const LeftNavigation = (props) => {
   //const history = useHistory();
   //using array destructure
   const { history } = props;
-  console.log("Props: ", props);
+
   /*
    * Contains each navigation item and its details
    */

@@ -1,7 +1,4 @@
 import "./App.css";
-import Header from "./components/Header";
-import { AppBar } from "@material-ui/core";
-import LeftNavigation from "./components/LeftNavigation";
 import Footer from "./components/Footer";
 import Layout from "./layout/Layout";
 import { Switch, Route } from "react-router-dom";
